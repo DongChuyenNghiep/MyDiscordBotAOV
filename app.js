@@ -180,6 +180,8 @@ async function checkForUpdates() {
         console.error("❌ Lỗi khi kiểm tra team mới:", error);
     }
 }
+const app = express();
+const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
     res.send("Bot is running!");
 });
