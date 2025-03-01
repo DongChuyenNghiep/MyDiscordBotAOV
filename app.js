@@ -5,7 +5,7 @@ import axios from "axios";
 import { GUILD_ID, API_TEAMS, API_USERS, CHECK_INTERVAL } from "./config.js";
 
 // Khởi tạo Discord bot
-const TOKEN = process.env.DISCORD_TOKEN;
+const TOKEN = process.env.DISCORD_TOKEN
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -206,3 +206,6 @@ app.get("/", (req, res) => {
     res.send("Bot is running!");
 });
 
+app.listen(PORT, () => {
+    console.log(`🌐 Express server is running on port ${PORT}`);
+});
