@@ -184,10 +184,15 @@ async function checkForUpdates() {
 // Khi bot sẵn sàng
 client.once("ready", async () => {
     console.log(`🤖 Bot đã đăng nhập với tên ${client.user.tag}`);
+
     const guild = await client.guilds.fetch(GUILD_ID);
     await fetchAllMembers(guild);
+
+    console.log("✅ Đã kết nối với server:", guild.name);
+
     setInterval(checkForUpdates, CHECK_INTERVAL);
 });
+
 
 // Đăng nhập bot
 client.login(TOKEN);
@@ -201,6 +206,3 @@ app.get("/", (req, res) => {
     res.send("Bot is running!");
 });
 
-app.listen(PORT, () => {
-    console.log(`🌐 Express server is running on port ${PORT}`);
-});
