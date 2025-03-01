@@ -180,7 +180,13 @@ async function checkForUpdates() {
         console.error("❌ Lỗi khi kiểm tra team mới:", error);
     }
 }
+app.get("/", (req, res) => {
+    res.send("Bot is running!");
+});
 
+app.listen(PORT, () => {
+    console.log(`🌐 Express server is running on port ${PORT}`);
+});
 // Khi bot sẵn sàng
 const SERVER_URL = `https://mydiscordbotaov.onrender.com`;
 
